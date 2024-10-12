@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		4CB9435B2CBA4DFE0005BE41 /* FluidSideBarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB9435A2CBA4DFE0005BE41 /* FluidSideBarApp.swift */; };
-		4CB9435D2CBA4DFE0005BE41 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB9435C2CBA4DFE0005BE41 /* ContentView.swift */; };
+		4CB9435D2CBA4DFE0005BE41 /* ElegantTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB9435C2CBA4DFE0005BE41 /* ElegantTabView.swift */; };
 		4CB9435F2CBA4E000005BE41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CB9435E2CBA4E000005BE41 /* Assets.xcassets */; };
 		4CB943622CBA4E000005BE41 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CB943612CBA4E000005BE41 /* Preview Assets.xcassets */; };
 		4CB9436C2CBA4E000005BE41 /* FluidSideBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB9436B2CBA4E000005BE41 /* FluidSideBarTests.swift */; };
 		4CB943762CBA4E000005BE41 /* FluidSideBarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB943752CBA4E000005BE41 /* FluidSideBarUITests.swift */; };
 		4CB943782CBA4E000005BE41 /* FluidSideBarUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB943772CBA4E000005BE41 /* FluidSideBarUITestsLaunchTests.swift */; };
+		4CB943892CBAA8410005BE41 /* ElegantTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB943882CBAA8410005BE41 /* ElegantTabViewModel.swift */; };
+		4CB9438B2CBACCDE0005BE41 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB9438A2CBACCDE0005BE41 /* ContentView.swift */; };
+		4CB9438D2CBACD7F0005BE41 /* ElegantTabItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB9438C2CBACD7F0005BE41 /* ElegantTabItemView.swift */; };
+		4CB9438F2CBACDEF0005BE41 /* ElegantTabViewButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB9438E2CBACDEF0005BE41 /* ElegantTabViewButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +40,7 @@
 /* Begin PBXFileReference section */
 		4CB943572CBA4DFE0005BE41 /* FluidSideBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FluidSideBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CB9435A2CBA4DFE0005BE41 /* FluidSideBarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluidSideBarApp.swift; sourceTree = "<group>"; };
-		4CB9435C2CBA4DFE0005BE41 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4CB9435C2CBA4DFE0005BE41 /* ElegantTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElegantTabView.swift; sourceTree = "<group>"; };
 		4CB9435E2CBA4E000005BE41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4CB943612CBA4E000005BE41 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4CB943672CBA4E000005BE41 /* FluidSideBarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FluidSideBarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +48,10 @@
 		4CB943712CBA4E000005BE41 /* FluidSideBarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FluidSideBarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CB943752CBA4E000005BE41 /* FluidSideBarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluidSideBarUITests.swift; sourceTree = "<group>"; };
 		4CB943772CBA4E000005BE41 /* FluidSideBarUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluidSideBarUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4CB943882CBAA8410005BE41 /* ElegantTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElegantTabViewModel.swift; sourceTree = "<group>"; };
+		4CB9438A2CBACCDE0005BE41 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4CB9438C2CBACD7F0005BE41 /* ElegantTabItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElegantTabItemView.swift; sourceTree = "<group>"; };
+		4CB9438E2CBACDEF0005BE41 /* ElegantTabViewButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElegantTabViewButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +103,11 @@
 			isa = PBXGroup;
 			children = (
 				4CB9435A2CBA4DFE0005BE41 /* FluidSideBarApp.swift */,
-				4CB9435C2CBA4DFE0005BE41 /* ContentView.swift */,
+				4CB9438A2CBACCDE0005BE41 /* ContentView.swift */,
+				4CB9435C2CBA4DFE0005BE41 /* ElegantTabView.swift */,
+				4CB9438C2CBACD7F0005BE41 /* ElegantTabItemView.swift */,
+				4CB9438E2CBACDEF0005BE41 /* ElegantTabViewButtonView.swift */,
+				4CB943882CBAA8410005BE41 /* ElegantTabViewModel.swift */,
 				4CB9435E2CBA4E000005BE41 /* Assets.xcassets */,
 				4CB943602CBA4E000005BE41 /* Preview Content */,
 			);
@@ -257,8 +269,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CB9435D2CBA4DFE0005BE41 /* ContentView.swift in Sources */,
+				4CB9438D2CBACD7F0005BE41 /* ElegantTabItemView.swift in Sources */,
+				4CB943892CBAA8410005BE41 /* ElegantTabViewModel.swift in Sources */,
+				4CB9435D2CBA4DFE0005BE41 /* ElegantTabView.swift in Sources */,
+				4CB9438F2CBACDEF0005BE41 /* ElegantTabViewButtonView.swift in Sources */,
 				4CB9435B2CBA4DFE0005BE41 /* FluidSideBarApp.swift in Sources */,
+				4CB9438B2CBACCDE0005BE41 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
