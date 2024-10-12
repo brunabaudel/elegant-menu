@@ -8,7 +8,7 @@ struct FluidTabbarMenu: View {
     
     var body: some View {
         GeometryReader { geometry in
-            ZStack(alignment: .bottom) {
+            ZStack(alignment: .trailing) {
                 // Main content area
                 ZStack {
                     switch selectedTab {
@@ -27,10 +27,10 @@ struct FluidTabbarMenu: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 
                 // Tabbar
-                ZStack(alignment: .bottom) {
+                ZStack(alignment: .leading) {
                     Color.clear.ignoresSafeArea()
                     
-                    HStack(spacing: 0) {
+                    VStack(alignment: .trailing, spacing: 0) {
                         ForEach(0..<tabs.count, id: \.self) { index in
                             TabbarButton(
                                 title: tabs[index],
@@ -44,7 +44,7 @@ struct FluidTabbarMenu: View {
                             )
                         }
                     }
-                    .padding(.horizontal, 15)
+                    .padding(.vertical, 15)
                     .background(.black)
                     .clipShape(Capsule())
                     
@@ -52,10 +52,12 @@ struct FluidTabbarMenu: View {
                         .trim(from: 0, to: 0.5)
                         .fill(Color.white)
                         .frame(width: 30, height: 30)
-                        .offset(x: tabPositions[selectedTab] - geometry.size.width / 2 + 41, y: -45)
+                        .rotationEffect(.degrees(-90))
+                        .offset(x: -15, y: tabPositions[selectedTab] - geometry.size.height / 2 - 15)
                         .animation(.spring(response: 0.3, dampingFraction: 0.7), value: selectedTab)
                 }
-                .padding()
+                .frame(width: 70)
+                .padding(4)
             }
             .edgesIgnoringSafeArea(.all)
         }
@@ -78,7 +80,7 @@ struct TabbarButton: View {
         }
         .background(
             GeometryReader { geo in
-                Color.clear.preference(key: TabPositionKey.self, value: geo.frame(in: .global).minX)
+                Color.clear.preference(key: TabPositionKey.self, value: geo.frame(in: .global).minY)
             }
         )
         .onPreferenceChange(TabPositionKey.self) { position = $0 }
