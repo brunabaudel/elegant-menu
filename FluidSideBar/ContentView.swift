@@ -11,7 +11,7 @@ struct ContentView: View {
     @State var selectedTab: Int = 0
     
     var body: some View {
-        ElegantTabView(position: .right, selectedTab: $selectedTab) {
+        ElegantTabView(position: .bottom, selectedTab: $selectedTab) {
             HomeScreen()
                 .tabItem("house")
             
@@ -24,7 +24,11 @@ struct ContentView: View {
             SettingsScreen()
                 .tabItem("gearshape")
         }
-        .background(Color.blue)
+//        .foreground(Color.yellow)
+//        .foregroundDisabled(Color.pink)
+//        .background(.blue)
+//        .indicator(Color.yellow)
+//        .padding(24)
     }
 }
 

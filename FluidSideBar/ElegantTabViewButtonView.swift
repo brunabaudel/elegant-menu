@@ -11,6 +11,8 @@ struct ElegantTabViewButtonView: View {
     let title: String
     let isSelected: Bool
     let position: TabbarPosition
+    let tabBarButtonsColor: Color
+    let tabBarButtonsDisabledColor: Color
     let action: () -> Void
     @Binding var tabPosition: CGFloat
     
@@ -18,7 +20,7 @@ struct ElegantTabViewButtonView: View {
         Button(action: action) {
             Image(systemName: title)
                 .font(.system(size: 18, weight: .semibold))
-                .foregroundColor(isSelected ? .white : .gray)
+                .foregroundColor(isSelected ? tabBarButtonsColor : tabBarButtonsDisabledColor)
                 .frame(width: 60, height: 60)
         }
         .background(
