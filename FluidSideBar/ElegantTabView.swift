@@ -8,6 +8,8 @@ struct ElegantTabView<Content: View>: View {
     let content: () -> Content
     
     private var tabItems: [ElegantTabItemView] = []
+    var tabBarBackgroundColor: Color = .black
+    var tabBarButtonsColor: Color = .white
            
     init(position: TabbarPosition,
          selectedTab: Binding<Int>,
@@ -26,18 +28,20 @@ struct ElegantTabView<Content: View>: View {
     }
     
     var body: some View {
-        GeometryReader { geometry in
-            ZStack {
-                if selectedTab >= 0 && selectedTab < tabItems.count {
-                    tabItems[selectedTab].content
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                } else {
-                    EmptyView()
+        if tabItems.count > 0 {
+            GeometryReader { geometry in
+                ZStack {
+                    if selectedTab >= 0 && selectedTab < tabItems.count {
+                        tabItems[selectedTab].content
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    } else {
+                        EmptyView()
+                    }
+                    
+                    tabbarView(geometry: geometry)
                 }
-                
-                tabbarView(geometry: geometry)
+                .edgesIgnoringSafeArea(.all)
             }
-            .edgesIgnoringSafeArea(.all)
         }
     }
 }

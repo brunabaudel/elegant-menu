@@ -24,6 +24,7 @@ struct ContentView: View {
             SettingsScreen()
                 .tabItem("gearshape")
         }
+        .background(Color.blue)
     }
 }
 

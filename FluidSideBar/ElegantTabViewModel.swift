@@ -12,33 +12,11 @@ enum TabbarPosition {
 }
 
 extension ElegantTabView {
-    @ViewBuilder
-    func tabbarView(geometry: GeometryProxy) -> some View {
-        switch position {
-        case .left:
-            HStack {
-                tabbarContent(geometry: geometry)
-                    .frame(width: 70)
-                    .padding(4)
-                Spacer()
-            }
-        case .bottom:
-            VStack {
-                Spacer()
-                tabbarContent(geometry: geometry)
-                    .frame(height: 70)
-                    .padding(4)
-            }
-        case .right:
-            HStack {
-                Spacer()
-                tabbarContent(geometry: geometry)
-                    .frame(width: 70)
-                    .padding(4)
-            }
-        }
+    func background(_ color: Color) -> Self {
+        var view = self
+        view.tabBarBackgroundColor = color
+        return view
     }
-    
     func findTabItems(in mirror: Mirror) -> [ElegantTabItemView] {
         var tabItems: [ElegantTabItemView] = []
         
@@ -52,6 +30,35 @@ extension ElegantTabView {
         }
         
         return tabItems
+    }
+    
+    @ViewBuilder
+    func tabbarView(geometry: GeometryProxy) -> some View {
+        switch position {
+        case .left:
+            HStack {
+                tabbarContent(geometry: geometry)
+                    .frame(width: 70)
+                    .padding(4)
+                    
+                Spacer()
+            }
+        case .bottom:
+            VStack {
+                Spacer()
+                tabbarContent(geometry: geometry)
+                    .frame(height: 70)
+                    .padding(4)
+                    
+            }
+        case .right:
+            HStack {
+                Spacer()
+                tabbarContent(geometry: geometry)
+                    .frame(width: 70)
+                    .padding(4)
+            }
+        }
     }
     
     func tabbarContent(geometry: GeometryProxy) -> some View {
@@ -69,7 +76,7 @@ extension ElegantTabView {
             }
             .padding(.vertical, position == .bottom ? 5 : 15)
             .padding(.horizontal, position == .bottom ? 15 : 5)
-            .background(.black)
+            .background(tabBarBackgroundColor)
             .clipShape(Capsule())
             
             indicatorCircle(geometry: geometry)
